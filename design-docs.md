@@ -19,6 +19,7 @@
 - Transfer:
 	* holds the context necessary to perform a transfer
 	* is passed to the banking system
+  
 - Account:
 	* stores the total funds of an account
   * communicates with the bookkeeper to log the transactions performed
@@ -35,8 +36,8 @@
 - Send money to an account
 	
 ### Public 
-- Create account
-- Create a transfer
+- Open/close account
+- Initialize a transfer
 - Check account funds
 - Draw money from account
 - Deposit money in account
@@ -86,4 +87,3 @@
 
 ### Open account
 - Does the account exist?
-- Is this account open?
