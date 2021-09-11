@@ -31,9 +31,6 @@
 ---
 
 ## Services (which actions the system can do)
-
-### External
-- Send money to an account
 	
 ### Public 
 - Open/close account
