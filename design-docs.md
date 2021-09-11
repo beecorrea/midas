@@ -40,10 +40,10 @@
 - Deposit money in account
 
 ### Private
-- Create account
-- Create transfer
-- Inform account funds
+- Create/delete account
 - Add/subtract funds to/from account
+- Inform account funds
+- Create transfer
 
 ### Internal
 - Log account transaction
