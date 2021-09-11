@@ -1,5 +1,5 @@
 ---
-name: ENTITY
+name: New entity
 about: Template for creating an entity
 title: Enter the entity name...
 labels: entities
