@@ -2,12 +2,13 @@
 
 ## Entities
 
-### External (belong to the outer part of the system)
+### External (belong to the outer part of the system. the client.)
 - Account owner: 
 	* responsible for expressing desire for performing a bank transfer
 	* communicates with the accountant to initialize the transfer
 	
 ### Public (reside at the border of the system, interfacing the internal and private parts)
+- They don't necessarily need to be an entity: they can instead be a service
 - Cashier: 
 	* initializes a bank transfer context (sender acc, receiver acc, amount)
 	* executes the transfer to the bank system
@@ -32,20 +33,21 @@
 
 ## Services (which actions the system can do)
 	
-### Public 
+### Public (interact with external entities by processing their requests)
 - Open/close account
 - Initialize a transfer
 - Check account funds
 - Draw money from account
 - Deposit money in account
 
-### Private
+### Private (implement atomic operations that can be composed and reused between services)
 - Create/delete account
 - Add/subtract funds to/from account
 - Inform account funds
 - Create transfer
 
-### Internal
+### Internal (metasystem functionalities, they're usually business agnostic and serve only the system itself)
+- Examples: logger, monitor, env vars, parsers, serializers
 - Log account transaction
 
 ---

@@ -1,4 +1,4 @@
-package services
+package interfaces
 
 import (
 	"github.com/beecorrea/midas/src/entities/private"
@@ -19,12 +19,11 @@ type Transfer interface {
 
 type AccountManager interface {
 	OpenAccount(owner uuid.UUID) *private.Account
-	CloseAccount(acc *private.Account)
 }
 
 type Cashier interface {
 	CheckAccountFunds(acc *private.Account) int
 	Draw(acc *private.Account, amount int) int
 	Deposit(acc *private.Account, amount int)
-	TransferMoney(from uuid.UUID, to uuid.UUID, amount int)
+	TransferMoney(from *private.Account, to *private.Account, amount int)
 }
