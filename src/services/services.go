@@ -1,4 +1,4 @@
-package containers
+package services
 
 import (
 	"github.com/beecorrea/midas/src/services/private"
@@ -15,6 +15,6 @@ func GetPrivateServices() private.PrivateServices {
 func GetPublicServices(prv private.PrivateServices) public.PublicServices{
 	return public.PublicServices{
 		Cashier: public.NewPublicCashierService(prv),
-		AccountManager: nil,
+		AccountManager: public.NewPublicAccManagerSvc(prv),
 	}
 }

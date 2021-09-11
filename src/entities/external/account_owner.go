@@ -7,6 +7,6 @@ import (
 
 type AccountOwner struct {
 	Id uuid.UUID
-	Accounts []private.Account
+	Account *private.Account
 }
 
