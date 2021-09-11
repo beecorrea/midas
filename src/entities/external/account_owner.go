@@ -1,4 +1,4 @@
-package public
+package external
 
 import (
 	"github.com/beecorrea/midas/src/entities/private"
