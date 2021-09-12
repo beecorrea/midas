@@ -19,6 +19,6 @@ func NewAccountManager(pb *public.PublicServices) *AccountManagerProc {
 }
 
 func (amp *AccountManagerProc) OpenAccount(owner *external.AccountOwner) uuid.UUID {
-	owner.Account = amp.pb.AccountManager.OpenAccount(owner.Id)
+	owner.Account = amp.pb.AccountManager.CreateAccount(owner.Id)
 	return owner.Account.Id
 }

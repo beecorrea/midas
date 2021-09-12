@@ -21,17 +21,15 @@ func NewCashier(pb *public.PublicServices) *CashierProc {
 }
 
 func (c *CashierProc) TransferMoney(owner *external.AccountOwner, to_acc uuid.UUID, amount int) int {
-	var from *private.Account
 	
-
 	to := c.pb.Cashier.FetchAccount(to_acc)
-
+	// TODO refator to NewTransfer in PrivateCashierService
 	tf := &private.Transfer{
-		From: from,
+		From: owner.Account,
 		To: to,
 		Amount: amount,
 	}
-
+	
 	c.pb.Cashier.TransferMoney(tf)
 	return tf.Amount
 }

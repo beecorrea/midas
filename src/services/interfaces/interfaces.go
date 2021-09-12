@@ -19,7 +19,7 @@ type Transfer interface {
 }
 
 type AccountManager interface {
-	OpenAccount(owner uuid.UUID) *private.Account
+	CreateAccount(owner uuid.UUID) *private.Account
 }
 
 type Cashier interface {

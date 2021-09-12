@@ -7,10 +7,10 @@ import (
 )
 
 type PublicCashierService struct {
-	pv pvs.PrivateServices
+	pv *pvs.PrivateServices
 }
 
-func NewPublicCashierService(prv pvs.PrivateServices) *PublicCashierService{
+func NewPublicCashierService(prv *pvs.PrivateServices) *PublicCashierService{
 	return &PublicCashierService{
 		pv: prv,
 	}

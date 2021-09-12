@@ -9,22 +9,17 @@ import (
 
 
 type PublicAccManagerSvc struct {
-	pv pvs.PrivateServices
+	pv *pvs.PrivateServices
 }
 
-func NewPublicAccManagerSvc(prv pvs.PrivateServices) *PublicAccManagerSvc{
+func NewPublicAccManagerSvc(prv *pvs.PrivateServices) *PublicAccManagerSvc{
 	return &PublicAccManagerSvc{
 		pv: prv,
 	}
 }
 
-func (pams *PublicAccManagerSvc) OpenAccount(owner uuid.UUID) *private.Account {
-	act := &private.Account{
-		Id: uuid.New(),
-		Owner: owner,
-		Funds: 0,
-	}
-
+func (pams *PublicAccManagerSvc) CreateAccount(owner uuid.UUID) *private.Account {
+	act := pams.pv.Account.NewAccount(owner)
 	return act
 }
 

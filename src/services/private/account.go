@@ -5,7 +5,7 @@ import (
 	"github.com/google/uuid"
 )
 
-var GlobalAccounts []private.Account = make([]private.Account, 0)
+var GlobalAccounts []*private.Account = make([]*private.Account, 0)
 
 type PrivateAccountService struct {}
 
@@ -19,7 +19,7 @@ func (pas *PrivateAccountService) NewAccount(owner uuid.UUID) *private.Account {
 		Owner: owner,
 		Funds: 0,
 	}
-	GlobalAccounts = append(GlobalAccounts, *act)
+	GlobalAccounts = append(GlobalAccounts, act)
 	return act
 }
 
@@ -45,7 +45,7 @@ func (pas PrivateAccountService) GetFunds(acc *private.Account) int{
 func (pas PrivateAccountService) GetAccountByID(id uuid.UUID) *private.Account {
 	for _, acc := range GlobalAccounts {
 		if(acc.Id == id) {
-			return &acc
+			return acc
 		}
 	}
 	return pas.NewAccount(id)
