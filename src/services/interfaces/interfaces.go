@@ -20,6 +20,7 @@ type Transfer interface {
 
 type AccountManager interface {
 	CreateAccount(owner uuid.UUID) *private.Account
+	FetchAccount(id uuid.UUID) *private.Account
 }
 
 type Cashier interface {

@@ -51,3 +51,7 @@ func (pas PrivateAccountService) GetAccountByID(id uuid.UUID) *private.Account {
 	return pas.NewAccount(id)
 }
 
+func GetAllAccounts() []*private.Account{
+	return GlobalAccounts
+}
+

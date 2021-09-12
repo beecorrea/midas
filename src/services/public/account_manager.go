@@ -23,3 +23,6 @@ func (pams *PublicAccManagerSvc) CreateAccount(owner uuid.UUID) *private.Account
 	return act
 }
 
+func (pcs *PublicAccManagerSvc) FetchAccount(id uuid.UUID) *private.Account {
+	return pcs.pv.Account.GetAccountByID(id)
+}

@@ -24,6 +24,7 @@ func main(){
 	alice := external.CreateAccOwner()
 	bob := external.CreateAccOwner()
 	fmt.Printf("Account Owners created: %v \t\t %v\n", alice, bob)
+	
 
 	// Create accounts
 	accman.OpenAccount(alice)
